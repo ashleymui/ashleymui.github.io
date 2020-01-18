@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+  iframe {
+	overflow:hidden;
+	border-top:  0px ;
+	border-right:  0px ;
+	border-left:  0px ;
+	border-bottom:  0px ;
+  }
+  body {
+  overflow:hidden;
+	}
+  </style>
+    <script>
+	  var report = [
+			"https://ashleymui.github.io/"
+			];
+	  var index = 0;
+	  var seconds = 60;
+	  var minutes = 20;
+	  var page_refresh_ms=1000*seconds * minutes;
+	  var timer_s=seconds * minutes;
+	  
+	  var dummy = setInterval(loadVAReportSection, page_refresh_ms); // time in milliseconds, last number is # minutes
+	  
+	  
+	  function loadVAReportSection() {
+	  
+			document.getElementById("VAreport").src=report[index]; 
+			index = (index+1) % report.length;
+			timer_s=seconds*minutes;
+		  }
+		  
+	  
+	  var x=setInterval(function()
+		  {
+		  timer_s=timer_s-1;
+		  var today = new Date();
+		  var nowDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+		  var nowTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+		   
+		   document.getElementById("refresh_countdown").innerHTML =  "Time page was last active <br>" + nowDate +" at " + nowTime
+		   + "</br> <br>Report refresh in <br>" + Math.floor(timer_s / 60) + " Minutes, "
+		   + Math.floor(timer_s % 60) + " Seconds <br>";
+				<!-- + Math.floor( %(timer_s / 60)) + "seconds until next refresh"; -->
+		  }
+		  ,1000)
+	  
+	  
+	function startTime()
+		{
+		var today = new Date();
+		var nowDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+		var nowTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+		
+		document.getElementById('txt').innerHTML="Time of first login <br> " + nowDate +" at " + nowTime;
+		
+		}
+	
+	
+	
+    </script>
+	
+  </head>
+  <body onload="loadVAReportSection(),startTime();">
+    <div id="txt"></div>
+	<p id="refresh_countdown"></p>
+    
+	<!-- <iframe src="VAReport" height="500%" width="100%" scrolling="no"></iframe> -->
+	<iframe id="VAreport" style="width:100%; height:100%" scrolling="no" ></iframe>
+	
+
+
+  </body>
+  
+</html>
