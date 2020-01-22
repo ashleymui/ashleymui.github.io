@@ -8,7 +8,7 @@
 	,"https://tbub.sas.com/SASVisualAnalytics/?reportUri=%2Freports%2Freports%2Fe41f9a6f-09d5-4b18-98ce-797222fcb954&sectionIndex=0&sso_guest=true&printEnabled=false&shareEnabled=false&informationEnabled=false&commentsEnabled=false&alertsEnabled=false&reportViewOnly=true&reportContextBar=false"
 			];
 	  var index = 0;
-	  var dummy = setInterval(loadVAReportSection, 1000); // time in milliseconds
+	  var dummy = setInterval(loadVAReportSection, 10000); // time in milliseconds
 	  function loadVAReportSection() {
 		document.getElementById("VAreport").src=report[index]; 
 		index = (index+1) % report.length;
