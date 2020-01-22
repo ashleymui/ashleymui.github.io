@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="width:100%; height:100%">
   <head>
   <style>
   iframe {
@@ -15,11 +15,14 @@
   </style>
     <script>
 	  var report = [
-			"https://ashleymui.github.io/"
+			 "https://ashleymui.github.io/cary_weather.html"
+			,"https://itviya.sas.com/reportImages/directImage?reportUri=%2Freports%2Freports%2Fee5bfcd4-5dd9-4302-9cd6-52322141de98&size=1200x1000&layoutType=entireSection&sectionIndex=0"			
+			,"https://tbub.sas.com/SASVisualAnalytics/?reportUri=%2Freports%2Freports%2Fe41f9a6f-09d5-4b18-98ce-797222fcb954&sectionIndex=0&sso_guest=true&printEnabled=false&shareEnabled=false&informationEnabled=false&commentsEnabled=false&alertsEnabled=false&reportViewOnly=true&reportContextBar=false"
+			,"https://itviya.sas.com/SASVisualAnalytics/?reportUri=%2Freports%2Freports%2Fee5bfcd4-5dd9-4302-9cd6-52322141de98&sectionIndex=0&reportViewOnly=true&pageNavigation=false&sas-welcome=false"
 			];
 	  var index = 0;
 	  var seconds = 60;
-	  var minutes = 20;
+	  var minutes = 0.1;
 	  var page_refresh_ms=1000*seconds * minutes;
 	  var timer_s=seconds * minutes;
 	  
@@ -43,7 +46,7 @@
 		   
 		   document.getElementById("refresh_countdown").innerHTML =  "Time page was last active <br>" + today 
 			+ "</br> <br>Report refresh in <br>" + Math.floor(timer_s / 60) + " Minutes, "
-		   	+ Math.floor(timer_s % 60) + " Seconds <br>";
+		   + Math.floor(timer_s % 60) + " Seconds <br>";
 				<!-- + Math.floor( %(timer_s / 60)) + "seconds until next refresh"; -->
 		  }
 		  ,1000)
@@ -64,7 +67,7 @@
     </script>
 	
   </head>
-  <body onload="loadVAReportSection(),startTime();">
+  <body onload="loadVAReportSection(),startTime();" style="width:100%; height:100%" >
     <div id="txt"></div>
 	<p id="refresh_countdown"></p>
     
