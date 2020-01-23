@@ -43,9 +43,9 @@
 		  var nowTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 		   
 		   document.getElementById("refresh_countdown").innerHTML =  "Time page was last active <br>" + today 
-			+ "</br> <br>Report refresh in <br>" + Math.floor(timer_s / 60) + " Minutes, "
+			+ "</br> <br>Next report will load in: <br>" + Math.floor(timer_s / 60) + " Minutes, "
 		   + Math.floor(timer_s % 60) + " Seconds <br>";
-				<!-- + Math.floor( %(timer_s / 60)) + "seconds until next refresh"; -->
+				<!-- + Math.floor( %(timer_s / 60)) + "seconds until next report"; -->
 		  }
 		  ,1000)
 	  
